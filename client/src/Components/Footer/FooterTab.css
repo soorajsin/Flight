@@ -6,19 +6,65 @@
 .footer {
           background-color: #1976d2;
           width: 100%;
-          min-height: 300px;
+          min-height: 250px;
           margin-top: 500px;
           padding-bottom: 0px;
 }
 
-.footer .containerOfFooter{
+.footer .containerOfFooter {
           width: 1200px;
           margin: 0 auto;
           justify-content: space-between;
-          background-color: red;
+          /* background-color: red; */
           display: flex;
+          padding-top: 50px;
+          padding-bottom: 50px;
 }
 
-.footer .containerOfFooter .About{
+.footer .containerOfFooter .About {
+          font-size: 25px;
+          /* margin-left: 100px; */
+}
+
+.footer .containerOfFooter .About ul {
+          list-style: none;
+          /* margin-left: 5px; */
+}
+
+.footer .containerOfFooter .About ul li {
+          color: #fff;
           font-size: 20px;
+          margin-top: 20px;
+          cursor: pointer;
+          transition: text-decoration 0.3s ease-in;
+}
+
+.footer .containerOfFooter .About ul li:hover {
+          text-decoration: underline;
+
+}
+
+.footer .containerOfFooter .contact {
+          /* margin-right: 100px; */
+          font-size: 25px;
+}
+
+
+
+.footer .containerOfFooter .contact ul {
+          list-style: none;
+          /* margin-left: 5px; */
+}
+
+.footer .containerOfFooter .contact ul li {
+          color: #fff;
+          font-size: 20px;
+          margin-top: 20px;
+          cursor: pointer;
+          transition: text-decoration 0.3s ease-in;
+}
+
+.footer .containerOfFooter .contact ul li:hover {
+          text-decoration: underline;
+
 }
