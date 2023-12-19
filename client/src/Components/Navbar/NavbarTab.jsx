@@ -31,7 +31,19 @@ const NavbarTab = () => {
               <div className="tab3">
                 <Avatar />
 
-                
+                <div className="avatartab3">
+                  <div className="tabOFavatar">Email</div>
+                  <div className="tabOFavatar" >
+                    <NavLink to={"/"} className={"tabOfavatarNav"}>Home</NavLink>
+                  </div>
+                  <div className="tabOFavatar">
+                    <NavLink to={"/dash"} className={"tabOfavatarNav"}>DashBoard</NavLink>
+                  </div>
+                  <div className="tabOFavatar">
+                    <NavLink to={"/login"} className={"tabOfavatarNav"}>Login</NavLink>
+                  </div>
+                  <div className="tabOFavatar">Log Out</div>
+                </div>
               </div>
             </div>
           </div>
