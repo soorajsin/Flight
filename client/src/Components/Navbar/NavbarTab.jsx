@@ -18,9 +18,20 @@ const NavbarTab = () => {
                   />
                 </NavLink>
               </div>
-              <div className="tab2"><NavLink to={"/dash"}>Dashboard</NavLink></div>
+              <div className="tab2">
+                <NavLink to={"/dash"} className={"tab2Nav"}>
+                  Dashboard
+                </NavLink>
+              </div>
+              <div className="tab2">
+                <NavLink to={"/login"} className={"tab2Nav"}>
+                  Login
+                </NavLink>
+              </div>
               <div className="tab3">
                 <Avatar />
+
+                
               </div>
             </div>
           </div>

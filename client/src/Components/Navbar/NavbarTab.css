@@ -49,6 +49,11 @@ body {
           color: #fff;
 }
 
+.navbar .containerOfNavbar .tab2 .tab2Nav{
+          color: #fff;
+          text-decoration: none;
+}
+
 
 .navbar .containerOfNavbar .tab3 {
           margin-right: 0px;
@@ -60,6 +65,3 @@ body {
 }
 
 
-.footer{
-          min-height: 300px;
-}
