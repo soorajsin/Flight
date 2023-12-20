@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import "./mix.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import backendAPI from "../config";
 
 const Register = () => {
+  const url = backendAPI.backendURL;
+
+  const history = useNavigate();
+
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -20,6 +25,53 @@ const Register = () => {
   };
 
   console.log(data);
+
+  const submitRegister = async (e) => {
+    e.preventDefault();
+
+    const { name, email, password, cpassword } = data;
+
+    if (name === "") {
+      alert("Name is required");
+    } else if (email === "") {
+      alert("Email is required");
+    } else if (!email.includes("@gmail.com")) {
+      alert("Invalid Gmail Id  Eg:-  abc@gmail.com ");
+    } else if (password === "") {
+      alert("Password is Required");
+    } else if (password.length < 6) {
+      alert("Password should be of length 6");
+    } else if (cpassword === "") {
+      alert("Confirm Password is required");
+    } else if (cpassword.length < 6) {
+      alert(`Confirm Password must be atleast 6 characters long`);
+    } else if (password !== cpassword) {
+      alert("Both Passwords are not the same");
+    } else {
+      console.log("register");
+
+      const dataapi = await fetch(`${url}/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, password, cpassword }),
+      });
+
+      const res = await dataapi.json();
+
+      // console.log(res);
+      if (res.status === 201) {
+        console.log(res);
+
+        history("/login");
+      } else if (res.status === 202) {
+        alert("User Already registered ...");
+
+        setData({ ...data, name: "", email: "", password: "", cpassword: "" });
+      }
+    }
+  };
 
   return (
     <>
@@ -76,7 +128,7 @@ const Register = () => {
           </div>
           <br />
           <div className="reg">
-            <button>Register</button>
+            <button onClick={submitRegister}>Register</button>
           </div>
           <br />
           <div className="reg">
