@@ -82,6 +82,18 @@ body {
           display: block;
 }
 
+.navbar .containerOfNavbar .tab3 .avatarIcon {
+          color: red;
+          font-size: 30px;
+          background-color: #fff;
+          transition: 0.3s;
+}
+
+.navbar .containerOfNavbar .tab3 .avatarIcon:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 5px;
+}
+
 .navbar .containerOfNavbar .tab3 .avatartab3 .tabOFavatar {
           margin-bottom: 20px;
           background-color: #d14848;

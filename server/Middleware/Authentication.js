@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const keysecret = "hgvbgfhjkmnjuiojhgfdsertcvfgsazxdkj";
+const userdb = require("../Schema/Struchure");
 
 
 const authentication = async (req, res, next) => {
@@ -20,12 +21,31 @@ const authentication = async (req, res, next) => {
                                                   msg: "Not Verified Token"
                                         })
                               } else {
-                                        console.log(verifyToken);
+                                        // console.log(verifyToken);
+
+                                        const getData = await userdb.findOne({
+                                                  _id: verifyToken._id
+                                        });
+
+
+                                        if (!getData) {
+                                                  res.status(400).json({
+                                                            msg: "User Not Found!"
+                                                  })
+                                        } else {
+                                                  // console.log(getData);
+
+                                                  req.getData = getData;
+
+                                                  next();
+                                        }
                               }
                     }
           } catch (error) {
+                    console.error(error);
                     res.status(500).json({
-                              msg: "authentication Failed"
+                              msg: "authentication Failed",
+                              error: error.message
                     })
           }
 }

@@ -125,7 +125,42 @@ router.post("/login", async (req, res) => {
 
 //validator || authentication
 router.get("/validator", authentication, async (req, res) => {
-          console.log("done");
+          // console.log("done");
+
+          if (req.getData) {
+                    res.status(201).json({
+                              msg: "User found",
+                              status: 210,
+                              getData: req.getData
+                    })
+          }
+})
+
+
+router.post("/signOut", authentication, async (req, res) => {
+          // console.log(req.body);
+
+          const user = req.getData;
+
+          if (!user) {
+                    res.status(400).json({
+                              msg: "You are not login yet"
+                    })
+          } else {
+                    // console.log(user);
+
+                    const tokenToRemove = user.tokens.map((token) => token._id);
+
+                    user.tokens = [];
+
+                    const updatedUser = await user.save();
+
+                    res.status(201).json({
+                              msg: "Logout Successfully Done",
+                              status: 201,
+                              updatedUser
+                    })
+          }
 })
 
 

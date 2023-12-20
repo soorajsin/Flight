@@ -1,7 +1,39 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import "./Booking.css";
+import backendapi from "../config";
+import { contextNavigate } from "../Context/ContextProvider";
 
 const Booking = () => {
+
+  const url=backendapi.backendURL;
+
+  const {userdata, setUserData}=useContext(contextNavigate);
+
+  const bookingFlight=async()=>{
+    const token=await localStorage.getItem("userDataToken");
+    // console.log(token);
+
+    const data=await fetch(`${url}/validator`,{
+      method:"GET",
+      headers:{
+        "Content-Type":"application/json",
+        Authorization:token
+      }
+    })
+
+    const res=await data.json();
+
+    if(res.status === 201){
+      console.log(res);
+    }else{
+      console.log("Not found user");
+    }
+  }
+
+  useEffect(()=>{
+    bookingFlight();
+  })
+
   return (
     <>
       <div className="booking">

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./mix.css";
 import backendapi from "../config";
 
 const Login = () => {
   const url = backendapi.backendURL;
+
+  const history=useNavigate();
 
   const [sendData, setSendData] = useState({
     email: "",
@@ -54,6 +56,8 @@ const Login = () => {
         console.log(res);
 
         localStorage.setItem("userDataToken", res.data.token);
+
+        history("/dash");
       } else if (res.status === 202) {
         alert("Email not found");
 
