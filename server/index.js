@@ -3,6 +3,7 @@ const app = express();
 require("./DB/Connection");
 const cors = require("cors");
 const router = require("./Router/Route");
+const cookieParser = require("cookie-parser");
 const port = 4000 || process.env.PORT;
 
 
@@ -14,6 +15,7 @@ app.get("/", (req, res) => {
 
 
 app.use(express.json());
+app.use(cookieParser());
 app.use(cors());
 app.use(router);
 
