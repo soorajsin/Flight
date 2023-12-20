@@ -35,6 +35,17 @@ const userSchema = new mongoose.Schema({
                               type: String,
                               required: true
                     }
+          }],
+          bookingTicket:[{
+                    from:{
+                              type:String
+                    },
+                    to:{
+                              type:String
+                    }, 
+                    date:{
+                              type:String
+                    }
           }]
 });
 

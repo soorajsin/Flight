@@ -161,6 +161,42 @@ router.post("/signOut", authentication, async (req, res) => {
                               updatedUser
                     })
           }
+});
+
+
+
+router.post("/booking", authentication, async (req, res) => {
+          // console.log(req.body);
+
+          const {
+                    sendData
+          } = req.body;
+
+          if (!sendData) {
+                    res.status(400).json({
+                              msg: "Please provide all the fields"
+                    })
+          } else {
+                    const user = req.getData;
+
+                    // console.log(user);
+                    if (!user) {
+                              res.status(400).json({
+                                        msg: "User not found"
+                              })
+                    } else {
+                              user.bookingTicket.push(sendData);
+
+                              const saveData = await user.save();
+                              // console.log(saveData);
+
+                              res.status(201).json({
+                                        msg: "Added data successfully done",
+                                        status: 201,
+                                        updatedUser: saveData
+                              })
+                    }
+          }
 })
 
 
