@@ -38,8 +38,26 @@ const Dash = () => {
 
   return (
     <>
-      <h1 className="h12">Dashboard</h1>
-      {userdata ? userdata.getData.email : ""}
+      <div className="dash">
+        <div className="dashcontainer">
+          <h1>Welcome to Dashboard</h1>
+          <br />
+          <div className="dashbox">
+            {userdata
+              ? userdata.getData.bookingTicket.map((bookingTicket, index) => (
+                  <div key={index} className="data">
+                    <h3>{bookingTicket.from}</h3>
+                    <h3>{bookingTicket.to}</h3>
+                    <h3>{bookingTicket.date}</h3>
+                    <div className="remove">
+                      <i className="fa-solid fa-trash"></i>
+                    </div>
+                  </div>
+                ))
+              : ""}
+          </div>
+        </div>
+      </div>
     </>
   );
 };

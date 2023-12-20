@@ -1,9 +1,42 @@
-*{
+* {
           margin: 0;
           padding: 0;
 }
 
-.h12{
-          margin-top: 200px;
-          font-size: 50px;
+.dash {
+          max-width: 1200px;
+          margin: 100px auto;
+          background-color: #f5f5f5;
+}
+
+.dash .dashcontainer {
+          margin-left: 10px;
+          /* background-color: #c21919; */
+          border-radius: 10px;
+          padding-left: 10px;
+          padding-right: 10px;
+}
+
+.dash .dashcontainer .dashbox {
+          margin-top: 50px;
+          margin-bottom: 50px;
+          padding-bottom: 50px;
+}
+
+.dash .dashcontainer .dashbox .data {
+          margin-top: 30px;
+          margin-bottom: 30px;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 10px;
+          transition: 0.3s ease;
+          cursor: pointer;
+}
+
+.dash .dashcontainer .dashbox .data:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }

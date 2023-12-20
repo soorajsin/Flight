@@ -7,7 +7,7 @@ const Booking = () => {
 
   const url=backendapi.backendURL;
 
-  const {userdata, setUserData}=useContext(contextNavigate);
+  const { setUserData}=useContext(contextNavigate);
 
   const bookingFlight=async()=>{
     const token=await localStorage.getItem("userDataToken");
