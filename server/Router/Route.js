@@ -2,6 +2,7 @@ const express = require("express");
 const router = new express.Router();
 const bcrypt = require("bcryptjs");
 const userdb = require("../Schema/Struchure");
+const authentication = require("../Middleware/Authentication");
 
 
 
@@ -118,6 +119,13 @@ router.post("/login", async (req, res) => {
                               }
                     }
           }
+})
+
+
+
+//validator || authentication
+router.get("/validator", authentication, async (req, res) => {
+          console.log("done");
 })
 
 
