@@ -36,15 +36,15 @@ const userSchema = new mongoose.Schema({
                               required: true
                     }
           }],
-          bookingTicket:[{
-                    from:{
-                              type:String
+          bookingTicket: [{
+                    from: {
+                              type: String
                     },
-                    to:{
-                              type:String
-                    }, 
-                    date:{
-                              type:String
+                    to: {
+                              type: String
+                    },
+                    date: {
+                              type: String
                     }
           }]
 });

@@ -40,3 +40,30 @@
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }
+
+.dash .dashcontainer .dashbox .dash .line {
+          width: 30px;
+          height: 20px;
+          background-color: black;
+          color: black;
+}
+
+.dash .dashcontainer .dashbox .data .remove {
+          display: none;
+}
+
+.dash .dashcontainer .dashbox .data:hover .remove {
+          display: block;
+}
+
+.dash .dashcontainer .dashbox .data .remove i {
+          color: black;
+          font-size: 25px;
+          transition: 0.3s ease;
+}
+
+.dash .dashcontainer .dashbox .data .remove i:hover {
+          color: #d43757;
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+}

@@ -47,6 +47,7 @@ const Dash = () => {
               ? userdata.getData.bookingTicket.map((bookingTicket, index) => (
                   <div key={index} className="data">
                     <h3>{bookingTicket.from}</h3>
+                    <div className="line">{"->"}</div>
                     <h3>{bookingTicket.to}</h3>
                     <h3>{bookingTicket.date}</h3>
                     <div className="remove">
