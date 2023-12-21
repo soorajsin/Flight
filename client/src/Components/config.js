@@ -1,5 +1,5 @@
 const config = {
-          backendURL: "http://localhost:4000"
+          backendURL: "https://flight-alpha.vercel.app"
 }
 
 
