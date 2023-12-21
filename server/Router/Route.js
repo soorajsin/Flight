@@ -197,6 +197,54 @@ router.post("/booking", authentication, async (req, res) => {
                               })
                     }
           }
+});
+
+
+
+router.delete("/deletebooking", authentication, async (req, res) => {
+          // console.log(req.body);
+
+          const {
+                    bookingTicket
+          } = req.body;
+
+          if (!bookingTicket) {
+                    res.status(400).json({
+                              msg: "Booking ticket not found"
+                    })
+          } else {
+                    const user = req.getData;
+
+                    if (!user) {
+                              res.status(400).json({
+                                        msg: "User not found"
+                              })
+                    } else {
+                              // console.log(user);
+
+                              const entryField = user.bookingTicket.find((ticket) => ticket._id.toString() === bookingTicket);
+                              // console.log(entryField);
+
+                              if (!entryField) {
+                                        res.status(400).json({
+                                                  msg: "Entry field not found"
+                                        })
+                              } else {
+                                        // console.log(entryField);
+
+                                        user.bookingTicket = user.bookingTicket.filter((ticket) => ticket._id.toString() !== bookingTicket);
+                                        // console.log(user);
+
+                                        const updatedUser = await user.save();
+
+                                        res.status(201).json({
+                                                  msg: "Data Delete successfully done",
+                                                  status: 210,
+                                                  updatedUser
+                                        })
+                              }
+                    }
+          }
 })
 
 

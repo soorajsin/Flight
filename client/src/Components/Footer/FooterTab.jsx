@@ -1,5 +1,6 @@
 import React from "react";
 import "./FooterTab.css";
+import { NavLink } from "react-router-dom";
 
 const FooterTab = () => {
   return (
@@ -9,8 +10,12 @@ const FooterTab = () => {
           <div className="About">
             About
             <ul>
-              <li>Dashboard</li>
-              <li>Flight Booking</li>
+              <li>
+                <NavLink to={"/dash"} className={"footerLink"}>Dashboard</NavLink>
+              </li>
+              <li>
+                <NavLink to={"/"} className={"footerLink"}>Flight Booking</NavLink>
+              </li>
             </ul>
           </div>
           <div className="contact">

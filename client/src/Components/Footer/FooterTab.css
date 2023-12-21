@@ -44,6 +44,11 @@
 
 }
 
+.footer .containerOfFooter .About ul li .footerLink {
+          color: #fff;
+          text-decoration: none;
+}
+
 .footer .containerOfFooter .contact {
           /* margin-right: 100px; */
           font-size: 25px;

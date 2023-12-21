@@ -30,6 +30,7 @@ const NavbarTab = () => {
       setUserData(res);
     } else {
       console.log("user not found");
+      history("/login");
     }
   };
 
@@ -77,9 +78,11 @@ const NavbarTab = () => {
                 </NavLink>
               </div>
               <div className="tab2">
-                <NavLink to={"/dash"} className={"tab2Nav"}>
+                {userdata?(
+                  <NavLink to={"/dash"} className={"tab2Nav"}>
                   Dashboard
                 </NavLink>
+                ):<span>Dashboard</span>}
               </div>
               <div className="tab2">
                 <NavLink to={"/login"} className={"tab2Nav"}>
@@ -103,18 +106,24 @@ const NavbarTab = () => {
                     </NavLink>
                   </div>
                   <div className="tabOFavatar">
-                    <NavLink to={"/dash"} className={"tabOfavatarNav"}>
+                    {userdata?(
+                      <NavLink to={"/dash"} className={"tabOfavatarNav"}>
                       DashBoard
                     </NavLink>
+                    ):(
+                      <span>Dashboard</span>
+                    )}
                   </div>
                   <div className="tabOFavatar">
                     <NavLink to={"/login"} className={"tabOfavatarNav"}>
                       Login
                     </NavLink>
                   </div>
-                  <div className="tabOFavatar" onClick={signOut}>
+                  {userdata?(
+                    <div className="tabOFavatar" onClick={signOut}>
                     Log Out
                   </div>
+                  ):""}
                 </div>
               </div>
             </div>
