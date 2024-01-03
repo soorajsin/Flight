@@ -4,9 +4,9 @@ import "./mix.css";
 import backendapi from "../config";
 
 const Login = () => {
-  const url = backendapi.backendURL;
+  const history = useNavigate();
 
-  const history=useNavigate();
+  const url = backendapi.backendURL;
 
   const [sendData, setSendData] = useState({
     email: "",

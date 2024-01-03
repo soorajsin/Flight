@@ -28,6 +28,7 @@ const NavbarTab = () => {
 
     if (res.status === 210) {
       setUserData(res);
+      // history("/dash");
     } else {
       console.log("user not found");
       history("/login");
@@ -78,11 +79,13 @@ const NavbarTab = () => {
                 </NavLink>
               </div>
               <div className="tab2">
-                {userdata?(
+                {userdata ? (
                   <NavLink to={"/dash"} className={"tab2Nav"}>
-                  Dashboard
-                </NavLink>
-                ):<span>Dashboard</span>}
+                    Dashboard
+                  </NavLink>
+                ) : (
+                  <span>Dashboard</span>
+                )}
               </div>
               <div className="tab2">
                 <NavLink to={"/login"} className={"tab2Nav"}>
@@ -106,11 +109,11 @@ const NavbarTab = () => {
                     </NavLink>
                   </div>
                   <div className="tabOFavatar">
-                    {userdata?(
+                    {userdata ? (
                       <NavLink to={"/dash"} className={"tabOfavatarNav"}>
-                      DashBoard
-                    </NavLink>
-                    ):(
+                        DashBoard
+                      </NavLink>
+                    ) : (
                       <span>Dashboard</span>
                     )}
                   </div>
@@ -119,11 +122,13 @@ const NavbarTab = () => {
                       Login
                     </NavLink>
                   </div>
-                  {userdata?(
+                  {userdata ? (
                     <div className="tabOFavatar" onClick={signOut}>
-                    Log Out
-                  </div>
-                  ):""}
+                      Log Out
+                    </div>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
             </div>
