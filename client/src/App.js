@@ -1,7 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavbarTab from "./Components/Navbar/NavbarTab";
-import FooterTab from "./Components/Footer/FooterTab";
 import Booking from "./Components/FlightBook/Booking";
 import Dash from "./Components/Dashboard/Dash";
 import Register from "./Components/Account/Register";
@@ -21,7 +20,6 @@ function App() {
           <Route path="/login" element={<Login/>}/>
           <Route path="*" element={<AnotherTab/>}/>
         </Routes>
-        <FooterTab />
       </BrowserRouter>
     </>
   );
