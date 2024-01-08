@@ -74,7 +74,7 @@ const Login = () => {
     <>
       <div className="register">
         <div className="containerRegister">
-          <h1>Welcome to Login</h1>
+          <h1  className="containerRegisterLogin">Welcome to Login</h1>
           <br />
           <div className="reg">
             <label htmlFor="email">Email</label>
