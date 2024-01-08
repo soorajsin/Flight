@@ -12,11 +12,11 @@
 }
 
 .footer .containerOfFooter {
+          margin:auto;
           width: 1200px;
-          margin: auto;
-          justify-content: space-between;
-          /* background-color: red; */
           display: flex;
+          justify-content: space-between;
+          background-color: red;
           padding-top: 50px;
           padding-bottom: 50px;
 }
