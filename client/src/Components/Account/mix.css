@@ -14,12 +14,11 @@
 }
 
 .register .containerRegister {
-          text-align: start;
+          width:600px;
           margin:auto;
           background-colo:#fff;
           border-radius: 10px;
           padding: 50px;
-          flex-wrap: wrap;
           transition: 0.3s ease;
 }
 
