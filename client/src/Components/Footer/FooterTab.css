@@ -9,11 +9,13 @@
           min-height: 250px;
           margin-top: 250px;
           padding-bottom: 0px;
+          position: absolute;
+          bottom:0;
 }
 
 .footer .containerOfFooter {
           width: 1200px;
-          margin: 0 auto;
+          margin: auto;
           justify-content: space-between;
           /* background-color: red; */
           display: flex;
